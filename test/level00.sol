@@ -8,10 +8,6 @@ contract Attacker is Test {
     Instance level00 = new Instance("random password");
 
     function testLevel00() external {
-        vm.startBroadcast();
-
         level00.authenticate(level00.password());
-        
-        vm.stopBroadcast();
     }
 }
