@@ -5,7 +5,7 @@ import "instances/level00.sol";
 import "forge-std/Test.sol";
 
 contract Attacker is Test {
-    Instance level00 = Instance(0x080f1E5F240DA0d80A296a1693Aa16FF032D0894);
+    Instance level00 = Instance(vm.envAddress("INSTANCE"));
 
     function run() external {
         vm.startBroadcast();

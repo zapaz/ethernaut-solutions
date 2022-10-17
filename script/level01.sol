@@ -5,7 +5,7 @@ import "forge-std/Test.sol";
 import "instances/level01.sol";
 
 contract POC is Test {
-    Fallback level01 = Fallback(0x3AEF0fAE06854B0741A7b9BdD22fd68555913562);
+    Fallback level01 = Fallback(payable(vm.envAddress("INSTANCE")));
 
     function run() external {
         vm.startBroadcast();
