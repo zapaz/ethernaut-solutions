@@ -5,16 +5,16 @@ import "forge-std/Test.sol";
 import "instances/04_telephone.sol";
 
 contract AttackerTelephoneTest is Test {
-    function testLevel04() external {
+    function testTelephone() external {
         vm.prank(address(0x1));
         Telephone telephone = new Telephone();
 
-        console.log("Current Owner is: ", telephone.owner());
+        console.log("Current Owner is : ", telephone.owner());
 
         assertFalse(telephone.owner() == msg.sender);
         telephone.changeOwner(msg.sender);
         assertTrue(telephone.owner() == msg.sender);
 
-        console.log("New Owner is: ", telephone.owner());
+        console.log("New Owner is : ", telephone.owner());
     }
 }

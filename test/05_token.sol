@@ -5,7 +5,7 @@ import "forge-std/Test.sol";
 import "instances/05_token.sol";
 
 contract AttackerTokenTest is Test {
-    function testLevel05() external {
+    function testToken() external {
         vm.prank(address(0x1));
         Token token = new Token(1000);
 

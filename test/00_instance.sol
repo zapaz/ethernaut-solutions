@@ -5,7 +5,7 @@ import "instances/00_instance.sol";
 import "forge-std/Test.sol";
 
 contract AttackerInstanceTest is Test {
-    function testinstance(string memory pass) external {
+    function testInstance(string memory pass) external {
         vm.prank(address(0x1));
         Instance instance = new Instance(pass);
 

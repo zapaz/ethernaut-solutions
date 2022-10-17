@@ -5,7 +5,7 @@ import "forge-std/Test.sol";
 import "instances/06_delegation.sol";
 
 contract AttackerDelegationTest is Test {
-    function testLevel06() external {
+    function testDelegation() external {
         vm.prank(address(0x1));
         Delegate delegate = new Delegate(address(0x2));
 
