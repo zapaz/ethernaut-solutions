@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 import "forge-std/Script.sol";
 import "instances/level02.sol";
 
-contract POC is Script {
+contract AttackerFalloutScript is Script {
     Fallout level02 = Fallout(payable(vm.envAddress("INSTANCE")));
 
     function run() external {

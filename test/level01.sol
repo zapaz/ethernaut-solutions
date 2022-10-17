@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 import "forge-std/Test.sol";
 import "instances/level01.sol";
 
-contract POC is Test {
+contract AttackerFallbackTest is Test {
     Fallback level01 = new Fallback();
 
     function testLevel01() external {

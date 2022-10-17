@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
-import "forge-std/Test.sol";
+import "forge-std/Script.sol";
 import "instances/level01.sol";
 
-contract POC is Test {
+contract AttackerFallbackScript is Script {
     Fallback level01 = Fallback(payable(vm.envAddress("INSTANCE")));
 
     function run() external {

@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 import "forge-std/Test.sol";
 import "instances/level02.sol";
 
-contract POC is Test {
+contract AttackerFalloutTest is Test {
     Fallout level02 = new Fallout();
 
     function testLevel02() external {
