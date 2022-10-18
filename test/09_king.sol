@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
+import "forge-std/Test.sol";
 import "instances/09_king.sol";
 import "contracts/09_king.sol";
-import "forge-std/Test.sol";
 
 contract AttackerKingTest is Test {
     function testKing(uint256 prize) external {

@@ -13,7 +13,11 @@ contract AttackerKingScript is Script {
 
         AttackerKing attackerKing = new AttackerKing();
 
+        console.log("king1", king._king());
+
         attackerKing.exploit{value: 0.001 ether}(address(king));
+
+        console.log("king2", king._king());
 
         vm.stopBroadcast();
     }

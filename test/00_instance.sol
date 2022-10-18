@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
-import "instances/00_instance.sol";
 import "forge-std/Test.sol";
+import "instances/00_instance.sol";
 
 contract AttackerInstanceTest is Test {
     function testInstance(string memory pass) external {
