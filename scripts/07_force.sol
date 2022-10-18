@@ -2,7 +2,7 @@
 pragma solidity ^0.6.0;
 
 import "forge-std/Script.sol";
-import "src/07_force.sol";
+import "contracts/07_force.sol";
 
 contract AttackerForceScript is Script {
     function run() external {

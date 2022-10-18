@@ -3,7 +3,7 @@ pragma solidity ^0.6.0;
 
 import "forge-std/Script.sol";
 import "instances/04_telephone.sol";
-import "src/04_telephone.sol";
+import "contracts/04_telephone.sol";
 
 contract AttackerTelephoneScript is Script {
     address telephone = vm.envAddress("INSTANCE");

