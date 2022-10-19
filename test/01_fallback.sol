@@ -12,7 +12,6 @@ contract AttackerFallbackTest is Test {
         fallbck.contribute{value: 1 wei}();
         fallbck.getContribution();
 
-
         assertFalse(fallbck.owner() == address(this));
         assertFalse(address(fallbck).balance == 0);
 
@@ -23,7 +22,6 @@ contract AttackerFallbackTest is Test {
 
         assertTrue(fallbck.owner() == address(this));
         assertTrue(address(fallbck).balance == 0);
-
     }
 
     receive() external payable {}
