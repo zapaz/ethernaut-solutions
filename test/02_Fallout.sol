@@ -6,7 +6,7 @@ import "instances/02_Fallout.sol";
 
 contract AttackerFalloutTest is Test {
     function testFallout() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Fallout fallout = new Fallout();
 
         assertFalse(fallout.owner() == address(this));

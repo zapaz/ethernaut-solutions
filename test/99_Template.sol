@@ -6,7 +6,7 @@ import "instances/99_template.sol";
 
 contract AttackerTemplateTest is Test {
     function testTemplate() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Template template = new Template();
 
         //

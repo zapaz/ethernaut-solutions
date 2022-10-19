@@ -7,7 +7,7 @@ import "contracts/14_GatekeeperTwo.sol";
 
 contract AttackerGatekeeperTwoTest is Test {
     function testGatekeeperTwo() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         GatekeeperTwo gatekeeperTwo = new GatekeeperTwo();
 
         assertFalse(gatekeeperTwo.entrant() == msg.sender);

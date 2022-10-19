@@ -6,7 +6,7 @@ import "instances/08_Vault.sol";
 
 contract AttackerVaultTest is Test {
     function testVault(bytes32 passwd) external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Vault vault = new Vault(passwd);
 
         bytes32 pass = vm.load(address(vault), bytes32(uint256(1)));

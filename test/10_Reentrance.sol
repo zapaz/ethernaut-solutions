@@ -7,7 +7,7 @@ import "contracts/10_Reentrance.sol";
 
 contract AttackerReentranceTest is Test {
     function testReentrance() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Reentrance reentrance = new Reentrance();
         AttackerReentrance attackerReentrance = new AttackerReentrance();
 

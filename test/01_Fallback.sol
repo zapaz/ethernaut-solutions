@@ -6,7 +6,7 @@ import "instances/01_Fallback.sol";
 
 contract AttackerFallbackTest is Test {
     function testFallback() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Fallback fallbck = new Fallback();
 
         fallbck.contribute{value: 1 wei}();
@@ -15,7 +15,7 @@ contract AttackerFallbackTest is Test {
         assertFalse(fallbck.owner() == address(this));
         assertFalse(address(fallbck).balance == 0);
 
-        (bool success,) = address(fallbck).call{value: 1 wei}("");
+        (bool success, ) = address(fallbck).call{value: 1 wei}("");
         require(success, "Transfer failed!");
 
         fallbck.withdraw();

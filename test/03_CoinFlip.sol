@@ -6,7 +6,7 @@ import "instances/03_CoinFlip.sol";
 
 contract AttackerCoinFlipTest is Test {
     function testCoinflip() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         CoinFlip coinflip = new CoinFlip();
 
         uint256 blockValue = uint256(blockhash(block.number - 1));

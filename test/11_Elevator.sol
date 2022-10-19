@@ -7,7 +7,7 @@ import "contracts/11_Elevator.sol";
 
 contract AttackerElevatorTest is Test {
     function testElevator() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Elevator elevator = new Elevator();
         AttackerElevator attackerElevator = new AttackerElevator();
 

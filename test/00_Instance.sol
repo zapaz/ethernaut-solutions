@@ -6,7 +6,7 @@ import "instances/00_Instance.sol";
 
 contract AttackerInstanceTest is Test {
     function testInstance(string memory pass) external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Instance instance = new Instance(pass);
 
         assertFalse(instance.getCleared());

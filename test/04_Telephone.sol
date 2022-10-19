@@ -6,7 +6,7 @@ import "instances/04_Telephone.sol";
 
 contract AttackerTelephoneTest is Test {
     function testTelephone() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Telephone telephone = new Telephone();
 
         assertFalse(telephone.owner() == msg.sender);

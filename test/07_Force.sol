@@ -7,7 +7,7 @@ import "contracts/07_Force.sol";
 
 contract AttackerForceTest is Test {
     function testForce() external {
-        vm.prank(address(0x1));
+        vm.prank(address(1));
         Force force = new Force();
         AttackerForce attackerForce = new AttackerForce();
 
