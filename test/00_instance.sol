@@ -10,9 +10,7 @@ contract AttackerInstanceTest is Test {
         Instance instance = new Instance(pass);
 
         assertFalse(instance.getCleared());
-
         instance.authenticate(instance.password());
-
         assertTrue(instance.getCleared());
     }
 }

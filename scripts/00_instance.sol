@@ -10,7 +10,10 @@ contract AttackerInstanceScript is Script {
     function run() external {
         vm.startBroadcast();
 
+        console.log("Current cleared :", instance.getCleared());
+        console.log("Password :", instance.password());
         instance.authenticate(instance.password());
+        console.log("New cleared :", instance.getCleared());
 
         vm.stopBroadcast();
     }

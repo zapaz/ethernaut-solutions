@@ -15,7 +15,6 @@ contract AttackerCoinFlipScript is Script {
 
         coinflip.flip(blockValue >> 255 == 1);
 
-        console.log("blockNum", blockNum);
         console.log("Consecutive Wins: ", coinflip.consecutiveWins());
 
         vm.stopBroadcast();

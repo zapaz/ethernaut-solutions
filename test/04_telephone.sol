@@ -9,12 +9,8 @@ contract AttackerTelephoneTest is Test {
         vm.prank(address(0x1));
         Telephone telephone = new Telephone();
 
-        console.log("Current Owner is : ", telephone.owner());
-
         assertFalse(telephone.owner() == msg.sender);
         telephone.changeOwner(msg.sender);
         assertTrue(telephone.owner() == msg.sender);
-
-        console.log("New Owner is : ", telephone.owner());
     }
 }

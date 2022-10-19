@@ -11,12 +11,8 @@ contract AttackerForceTest is Test {
         Force force = new Force();
         AttackerForce attackerForce = new AttackerForce();
 
-        console.log("Initial balance ", address(force).balance);
         assertEq(address(force).balance, 0);
-
         attackerForce.exploit{value: 1 wei}(address(force));
-
-        console.log("Final balance ", address(force).balance);
         assertGt(address(force).balance, 0);
     }
 

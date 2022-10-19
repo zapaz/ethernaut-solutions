@@ -13,7 +13,5 @@ contract AttackerCoinFlipTest is Test {
 
         bool success = coinflip.flip(blockValue >> 255 == 1);
         assertTrue(success);
-
-        console.log("Consecutive Wins: ", coinflip.consecutiveWins());
     }
 }

