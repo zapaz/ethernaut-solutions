@@ -8,7 +8,7 @@ import "contracts/09_King.sol";
 contract AttackerKingTest is Test {
     function testKing(uint256 prize) external {
         vm.assume(prize > 0);
-        vm.assume(prize < 2 ** 18);
+        vm.assume(prize < 2**18);
 
         King king = new King{value: prize}();
         AttackerKing attackerKing = new AttackerKing();
