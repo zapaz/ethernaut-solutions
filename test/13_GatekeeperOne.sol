@@ -13,13 +13,7 @@ contract AttackerGatekeeperOneTest is Test {
 
         assertFalse(gatekeeperOne.entrant() == msg.sender);
         for (uint256 i; i < 8191; i++) {
-            try
-                attackerGatekeeperOne.exploit(
-                    address(gatekeeperOne),
-                    20000 + i,
-                    uint16(msg.sender)
-                )
-            {
+            try attackerGatekeeperOne.exploit(address(gatekeeperOne), 20000 + i, uint16(msg.sender)) {
                 console.log("OK", i); // i = 7484 locally, 4769 for target network
                 break;
             } catch (bytes memory) {}

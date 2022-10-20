@@ -11,6 +11,6 @@ contract AttackerTokenTest is Test {
 
         assertEq(token.balanceOf(address(this)), 0);
         token.transfer(address(2), 21);
-        assertGt(token.balanceOf(address(this)), 2**100);
+        assertGt(token.balanceOf(address(this)), 2 ** 100);
     }
 }

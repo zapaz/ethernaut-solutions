@@ -15,7 +15,7 @@ contract AttackerFallbackTest is Test {
         assertFalse(fallbck.owner() == address(this));
         assertFalse(address(fallbck).balance == 0);
 
-        (bool success, ) = address(fallbck).call{value: 1 wei}("");
+        (bool success,) = address(fallbck).call{value: 1 wei}("");
         require(success, "Transfer failed!");
 
         fallbck.withdraw();

