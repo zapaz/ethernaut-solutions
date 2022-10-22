@@ -1,8 +1,16 @@
 [profile.default]
 src = 'contracts'
-out = 'out'
 tests = 'test'
+out = 'out'
 libs = ['lib']
+solc_version = '0.6.12'
+
+[profile.solc5]
+src = 'contracts5'
+tests = 'contracts5'
+out = 'out'
+libs = ['lib5', 'lib']
+solc_version = '0.5.17'
 
 [fmt]
 number_underscore = 'thousands'
