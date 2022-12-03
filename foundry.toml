@@ -1,31 +1,30 @@
 [profile.default]
 src = 'contracts'
-tests = 'test'
+test = 'test'
 out = 'out'
 libs = ['lib']
 solc_version = '0.6.12'
 
 [profile.solc5]
 src = 'contracts5'
-tests = 'contracts5'
+test = 'contracts5'
 out = 'out'
 libs = ['lib5', 'lib']
 solc_version = '0.5.17'
 
 [profile.solc7]
 src = 'contracts7'
-tests = 'contracts7'
+test = 'contracts7'
 out = 'out'
 libs = ['lib7', 'lib']
 solc_version = '0.7.6'
 
 [profile.solc8]
 src = 'contracts8'
-tests = 'contracts8'
+test = 'contracts8'
 out = 'out'
 libs = ['lib8', 'lib']
 solc_version = '0.8.17'
-
 
 [fmt]
 number_underscore = 'thousands'
