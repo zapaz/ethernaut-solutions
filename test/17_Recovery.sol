@@ -6,16 +6,14 @@ import "instances/17_Recovery.sol";
 
 contract AttackerRecoveryTest is Test {
     function testRecovery() external {
-        vm.prank(address(1));
         Recovery recovery = new Recovery();
+        recovery.generateToken("TOKEN", 42_000_000);
 
-        string memory name = "TOKEN";
-        uint256 tokenSupply = 42_000_000;
-        recovery.generateToken(name, tokenSupply);
+        address simpleTokenAddress = computeCreateAddress(address(recovery), 1);
+        SimpleToken simpleToken = SimpleToken(payable(simpleTokenAddress));
 
-        // Launch 'forge test -vvvv' once, get address and set TOKEN env and rerun...
-        SimpleToken simpleToken = SimpleToken(payable(vm.envAddress("TOKEN")));
-        assertEq(simpleToken.name(), name);
+        assertEq(simpleToken.name(), "TOKEN");
+        assertEq(address(simpleToken), simpleTokenAddress);
 
         (bool sent,) = address(simpleToken).call{value: 0.001 ether}("");
         require(sent, "Failed to send Ether");

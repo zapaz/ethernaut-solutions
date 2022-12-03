@@ -2,7 +2,7 @@
 pragma solidity ^0.6.0;
 
 import "forge-std/Test.sol";
-import "instances/99_template.sol";
+import "instances/99_Template.sol";
 
 contract AttackerTemplateTest is Test {
     function testTemplate() external {
